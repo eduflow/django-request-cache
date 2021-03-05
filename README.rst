@@ -22,7 +22,7 @@ Quick start
         ...
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         ...
-        'django_userforeignkey.middleware.UserForeignKeyMiddleware',
+        'django_request_cache.middleware.UserForeignKeyMiddleware',
         'django_request_cache.middleware.RequestCacheMiddleware',
     )
 
@@ -35,7 +35,7 @@ or if you are still using the an older Django version (e.g., Django 1.8) with ``
         ...
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         ...
-        'django_userforeignkey.middleware.UserForeignKeyMiddleware',
+        'django_request_cache.middleware.UserForeignKeyMiddleware',
         'django_request_cache.middleware.RequestCacheMiddleware',
     )
 

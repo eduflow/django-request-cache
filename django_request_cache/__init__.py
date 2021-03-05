@@ -6,11 +6,14 @@ def get_request_cache():
     Return the current requests cache
     :return:
     """
-    from django_userforeignkey.request import get_current_request
+    from .request import get_current_request
+
     return getattr(get_current_request(), "cache", None)
 
 
-cache_args_kwargs_marker = object()  # marker for separating args from kwargs (needs to be global)
+cache_args_kwargs_marker = (
+    object()
+)  # marker for separating args from kwargs (needs to be global)
 
 
 def cache_calculate_key(*args, **kwargs):
@@ -36,6 +39,7 @@ def cache_for_request(fn):
     :param fn:
     :return:
     """
+
     def wrapper(*args, **kwargs):
         cache = get_request_cache()
 
@@ -54,5 +58,5 @@ def cache_for_request(fn):
             setattr(cache, key, result)
 
         return result
-    return wrapper
 
+    return wrapper
